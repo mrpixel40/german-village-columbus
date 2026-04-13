@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-stone-50;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .article-content h2 {
+    @apply text-2xl font-serif font-bold text-brick-900 mt-10 mb-4;
+  }
+
+  .article-content h3 {
+    @apply text-xl font-serif font-semibold text-brick-800 mt-8 mb-3;
+  }
+
+  .article-content p {
+    @apply text-base leading-relaxed text-gray-700 mb-5;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .article-content ul, .article-content ol {
+    @apply mb-5 pl-6;
+  }
+
+  .article-content li {
+    @apply mb-2 text-gray-700;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .article-content a {
+    @apply text-village-700 underline decoration-village-300 hover:decoration-village-600 transition-colors;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #3a150d 0%, #6b2d1d 40%, #843520 70%, #a3401f 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+}
+
+/* Warm texture overlay for hero sections */
+.brick-texture {
+  position: relative;
+}
+
+.brick-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h20v20H0zM20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
